@@ -1,5 +1,5 @@
 ---
-title: Tim Legrand's projects page
+title: Tim Legrand - projects page
 layout: default
 ---
 
