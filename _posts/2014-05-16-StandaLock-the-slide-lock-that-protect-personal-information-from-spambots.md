@@ -10,6 +10,7 @@ A standalone slide bar to be unlocked manually by user to prevent spambots for h
 #### Why a slidelock?
 Wondering about privacy and [spambot harvesting](http://en.wikipedia.org/wiki/Email_address_harvesting)? Many articles on the web are discussing about the best ways to protect personal information (PI) and prevent bots from using them for spam.
 A short resume of the state of the art could be:
+
   1. Spambots read HTML, so do not write PI in your web pages.
   2. The only way to know if the visitor is not a bot is making him proving is human.
   3. GUI-based actions (like reading a Captcha, picking an object of a certain kind or drawing a sheep) have the best results since no spambot can afford the needed computing power in a reasonnable time for brute force attacks.
