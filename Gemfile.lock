@@ -94,5 +94,3 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll
-  rdiscount
