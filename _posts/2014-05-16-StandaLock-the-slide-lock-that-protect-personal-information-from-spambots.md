@@ -31,6 +31,7 @@ In addition, this countermeasure supports clickable email links (which cannot be
   8. So solution is to decrypt and render PI only if visitor is human, that is, if he manually unlocked the slide lock via GUI.
 
 This solution is in **pure Javascript**, so no communication with server is required:
+
 * runs well on static servers such as Jekyll,
 * still runs if you loose network connection on your mobile,
 * don't wait for the server to respond, get unlocked information instantly!
