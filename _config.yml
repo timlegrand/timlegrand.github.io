@@ -1,0 +1,6 @@
+pygments: true
+markdown: rdiscount
+github: [Repository metadata]
+safe: true
+lsi: false
+source: .

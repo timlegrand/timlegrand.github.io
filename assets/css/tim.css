@@ -1,0 +1,9 @@
+.row.brand-primary {
+    background-color: @brand-primary;
+}
+
+body {
+	padding-top: 60px;
+    overflow-y: hidden; /* hide vertical scrollbar */
+}
+
