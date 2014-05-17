@@ -8,11 +8,14 @@ layout: default
     <!--<div class="span12">-->
         <h2>{{ post.title }}&nbsp;<small>- {{ post.subtitle }}</small></h2>
         <h4>{{ post.date | date_to_long_string }}</h4>
-        <p>{{ post.content }}</p>
+        {{ include StandaLock/blob/master/README.md }}
+        <!--
+        {{ post.content }}
+        {% if post.url %}
         <p><a href="{{ post.url }}">Read Post</a></p>
+        {% endif %}
+        -->
     <!--</div>-->
 </div>
 {% endfor %}
 
-<div id="123456">
-</div>
