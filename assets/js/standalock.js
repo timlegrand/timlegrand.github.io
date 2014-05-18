@@ -194,4 +194,8 @@ function securedAction() {
     insertion += '<a href="tel:' + decrypt(bp) + '">' + decrypt(bp) + '</a>';
     insertion += '</p>';
     document.getElementById('contact').innerHTML = insertion;
+
 }
+
+init();
+
