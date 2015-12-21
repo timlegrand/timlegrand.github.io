@@ -4,3 +4,4 @@ github: [Repository metadata]
 safe: true
 lsi: false
 source: .
+exclude: [Rakefile, Gemfile, Gemfile.lock, README.md, vendor]
