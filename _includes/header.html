@@ -24,6 +24,7 @@
 
     <link href="{{ site.url }}/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ site.url }}/assets/css/clean-blog.min.css" rel="stylesheet">
+    <link href="{{ site.url }}/assets/css/mine.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -58,13 +59,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="/index.html">Home</a>
+                        <a href="{{ site.url }}/index.html">Home</a>
                     </li>
                     <li>
-                        <a href="/about.html">About</a>
+                        <a href="{{ site.url }}/about.html">About</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="{{ site.url }}/contact.html">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -72,3 +73,24 @@
         </div>
         <!-- /.container -->
     </nav>
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('{{ site.url }}/{{ page.background }}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>timlegrand</h1>
+                    <hr class="small">
+                    <span class="subheading">High Performance Computing, Python &amp; Open Source</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
