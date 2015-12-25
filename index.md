@@ -26,21 +26,23 @@ layout: default
 
 {% for post in site.posts limit: 10 %}
 <div class="post-preview">
-    <a href="{% unless post.pageurl == blank or post.pageurl == nil %}{{ post.pageurl }}{% endunless %}">
+    <a href="{% unless post.content == blank or post.content == nil %}{{ post.url }}{% endunless %}">
         <h2 class="post-title">{{ post.title }}</h2>
         <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+        {% unless post.content == blank or post.content == nil %}{{ post.excerpt }}{% endunless %}
     </a>
-    <p class="post-meta">Posted by <a href="#">{{ post.author }}</a> on {{ post.date | date: "%Y/%m/%d" }}</p>
+    
+    <p class="post-meta">By <a href="{% unless post.authorsite == blank or post.authorsite == nil %}{{ post.authorsite }}{% endunless %}">{{ post.author }}</a> on {{ post.date | date: "%Y/%m/%d" }}</p>
 </div>
 <hr>
 {% endfor %}
 
-            <!-- Pager -->
+            <!-- Pager
             <ul class="pager">
                 <li class="next">
                     <a href="#">Older Posts &rarr;</a>
                 </li>
-            </ul>
+            </ul> -->
         </div>
     </div>
 </div>
