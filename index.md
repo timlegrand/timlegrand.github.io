@@ -1,6 +1,6 @@
 ---
 title: Tim Legrand
-background: assets/img/home-bg.jpg
+background: assets/images/the-loop.jpg
 layout: noparagraph
 forceallposts: false
 ---

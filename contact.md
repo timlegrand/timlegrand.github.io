@@ -1,9 +1,10 @@
 ---
 title: Tim Legrand
-background: assets/img/post-sample-image.jpg
+background: assets/images/the-curve.jpg
 layout: default
 waystoreachme:
   - github|https://github.com/timlegrand/
+  - globe|https://www.openhub.net/accounts/timlegrand/
   - bitbucket|https://bitbucket.org/timlegrand/
   - stack-overflow|http://stackoverflow.com/users/1967035/tim/
   - flickr|https://www.flickr.com/timlegrand/
