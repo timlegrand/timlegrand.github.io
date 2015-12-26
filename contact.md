@@ -1,6 +1,6 @@
 ---
 title: Tim Legrand
-background: assets/images/the-curve.jpg
+background: assets/images/the-loop.jpg
 layout: default
 waystoreachme:
   - github|https://github.com/timlegrand/

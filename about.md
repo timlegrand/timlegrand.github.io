@@ -1,6 +1,6 @@
 ---
 title: Tim Legrand
-background: assets/images/smoke-on.jpg
+background: assets/images/the-curve.jpg
 layout: default
 whatisupport:
   - git|Git
