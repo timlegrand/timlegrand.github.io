@@ -1,6 +1,6 @@
 ---
 title: Tim Legrand
-background: assets/img/home-bg.jpg
+background: assets/images/smoke-on.jpg
 layout: noparagraph
 forceallposts: false
 ---
@@ -9,8 +9,18 @@ forceallposts: false
 {% for post in site.posts limit: 10 %}
 {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
   {% unless posttime > currenttime and page.forceallposts == false %}
+    {% assign content = post.content | strip_newlines %}
+    {% capture posturl %}
+      {% if content == "" %}
+        {% if post.link != nil and post.link != blank %}
+          {{ post.link }}
+        {% endif %}
+      {% else %}
+        {{ post.url }}
+      {% endif %}
+    {% endcapture %}
 <div class="post-preview">
-  <a href="{% unless post.content == blank or post.content == nil %}{{ post.url }}{% endunless %}">
+  <a href="{{ posturl }}">
     <h2 class="post-title">{{ post.title }}</h2>
     <h3 class="post-subtitle">{{ post.subtitle }}</h3>
     {% unless post.content == blank or post.content == nil %}{{ post.excerpt }}{% endunless %}

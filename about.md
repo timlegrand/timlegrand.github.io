@@ -1,7 +1,19 @@
 ---
 title: Tim Legrand
-background: assets/img/post-bg.jpg
+background: assets/images/the-curve.jpg
 layout: default
+whatisupport:
+  - git|Git
+  - product-hunt|Python
+  - bitbucket|Atlassian SourceTree
+  - globe|Open Source Development
+  - btc|Bitcoin and Blockchain
+  - steam|Briton video game industry
+  - dropbox|Dropbox
+  - html5|HTML5
+  - chrome|Google Chrome
+  - rebel|Rebel Alliance
+  - paypal|Paypal
 ---
 
 # Today
@@ -18,13 +30,23 @@ I taught GPUs, multi-threading, multi-processing, super-computer architecture an
 
 # What I like most
 
-Open Source.
+Open Source. Wait, Nutella is what I like most. No, just kidding. Open Source. And Python. I ***love*** Python. Ok, Nutella first.
 
-Wait, Nutella is what I like most.
+I actively support:
 
-No, just kidding. Open Source. And Python. I love Python.
-
-Ok, Nutella first.
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+  <ul>
+    {% for way in page.whatisupport %}
+    <li class="list-unstyled">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-{{ way | split: "|" | first }} fa-stack-1x fa-inverse"></i>
+      </span>
+      &nbsp;&nbsp;&nbsp;&nbsp;{{ way | split: "|" | last }}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
 
 <!--
 
