@@ -7,30 +7,36 @@ forceallposts: false
 {% capture currenttime %}{{'now' | date: '%s'}}{% endcapture %}
 
 {% for post in site.posts limit: 10 %}
-{% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
+  {% assign content = post.content | strip_newlines %}
+  {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
   {% unless posttime > currenttime and page.forceallposts == false %}
-    {% assign content = post.content | strip_newlines %}
     {% capture posturl %}
       {% if content == "" %}
         {% if post.link != nil and post.link != blank %}
           {{ post.link }}
+          {% assign target = "_blank" %}
         {% endif %}
       {% else %}
         {{ post.url }}
       {% endif %}
     {% endcapture %}
 <div class="post-preview">
-  <a href="{{ posturl }}">
+  <a target="{{ target }}" href="{{ posturl }}">
     <h2 class="post-title">{{ post.title }}</h2>
-    <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-    {% unless post.content == blank or post.content == nil %}{{ post.excerpt }}{% endunless %}
-  </a>
+    <h3 class="post-subtitle">{{ post.subtitle }}</h3></a>
+    {% if content != "" %}
+      {{ post.excerpt }}
+  <a class="post-meta" target="{{ target }}" href="{{ posturl }}">&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i>&nbsp;Read more</a><br/>
+    {% endif %}
+    {% if post.link != nil and post.link != blank %}
+  <a class="post-meta" target="{{ target }}" href="{{ post.link }}">Check it out&nbsp;<i class="fa fa-sign-out"></i></a>
+    {% endif %}
   
-  <p class="post-meta">By <a href="{% unless post.authorsite == blank or post.authorsite == nil %}{{ post.authorsite }}{% endunless %}">{{ post.author }}</a> on {{ post.date | date: "%Y-%m-%d" }}</p>
+  <p class="post-meta">Posted on {{ post.date | date: "%Y-%m-%d" }}</p>
 </div>
 <hr>
-  {% endunless %}
-{% endfor %}
+  {% endunless <!-- Future post --> %}
+{% endfor <!-- post in posts --> %}
 
 <!-- Pager
 <ul class="pager">

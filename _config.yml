@@ -6,4 +6,5 @@ lsi: false
 source: .
 exclude: [Rakefile, Gemfile, Gemfile.lock, README.md, vendor]
 permalink: /:year-:month-:day/:title.html
-url: http://timlegrand.github.io/
+url: http://timlegrand.github.io
+description: Tim Legrand's personal website

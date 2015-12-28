@@ -1,10 +1,9 @@
 ---
 title: Giterm
-subtitle: A terminal-based GUI client for Git.
+subtitle: A terminal-based GUI client for Git
 author: Tim
-authorsite: http://timlegrand.github.io
 background: assets/img/post-bg.jpg
-layout: default
+layout: post
 link: https://github.com/timlegrand/giterm/
 ---
 People say Git is too complex to use, but I swear: its awesomeness is definitely worth deeping into it. How? I think the fastest way to learn something is to try it and look at the result. Even if it's a chainsaw.

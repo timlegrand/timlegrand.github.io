@@ -19,7 +19,7 @@ Feel free to contact me the way you want:
 <ul class="list-inline text-center">
   {% for way in page.waystoreachme %}
   <li>
-    <a href="{{ way | split: "|" | last }}">
+    <a target="_blank" href="{{ way | split: "|" | last }}">
       <span class="fa-stack fa-lg">
         <i class="fa fa-circle fa-stack-2x"></i>
         <i class="fa fa-{{ way | split: "|" | first }} fa-stack-1x fa-inverse"></i>
