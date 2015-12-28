@@ -5,20 +5,23 @@ layout: default
 whatisupport:
   - git|Git
   - product-hunt|Python
-  - bitbucket|Atlassian SourceTree
   - globe|Open Source Development
-  - btc|Bitcoin and Blockchain
+  - calendar|ISO 8601 date format
+  - btc|Blockchain
+  - bitbucket|Atlassian SourceTree
   - steam|Briton video game industry
+  - html5|HTML5 Canevas
+  - money|No change transactions
+  - btc|Bitcoin
+  - paypal|Paypal
   - dropbox|Dropbox
-  - html5|HTML5
   - chrome|Google Chrome
   - rebel|Rebel Alliance
-  - paypal|Paypal
 ---
 
 # Today
 
-In a transversal support team, I work as a DevOps consultant for a wide variety of project teams (LTE/5G, video compression, HDR, holography, e-health, virtual & augmented reality...) for which I offer my advice in multi-threading, multi-processing, software industrialization (VCS, continuous testing/integration/deployment) and agile software development.
+In a transversal support team, I work as a DevOps consultant for a wide variety of project teams (LTE/5G, video compression, HDR, holography, e-health, virtual & augmented reality...) for which I offer my advice in multi-threading, multi-processing, software industrialization (VCS, continuous testing, integration and deployment) and agile software development.
 
 
 # Past
@@ -32,9 +35,10 @@ I taught GPUs, multi-threading, multi-processing, super-computer architecture an
 
 Open Source. Wait, Nutella is what I like most. No, just kidding. Open Source. And Python. I ***love*** Python. Ok, Nutella first.
 
-I actively support:
+# I actively support
 
 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+  <br>
   <ul>
     {% for way in page.whatisupport %}
     <li class="list-unstyled">
