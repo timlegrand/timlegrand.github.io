@@ -1,5 +1,4 @@
 ---
-title: Tim Legrand
 background: assets/images/the-curve.jpg
 layout: default
 whatisupport:
@@ -7,15 +6,18 @@ whatisupport:
   - product-hunt|Python
   - globe|Open Source Development
   - calendar|ISO 8601 date format
+  - file-code-o|Markdown &amp; reStructuredText
   - btc|Blockchain
   - bitbucket|Atlassian SourceTree
-  - steam|Briton video game industry
+  - gamepad|Briton video game industry
   - html5|HTML5 Canevas
   - money|No change transactions
   - btc|Bitcoin
   - paypal|Paypal
   - dropbox|Dropbox
+  - plug|Tesla Motors
   - chrome|Google Chrome
+  - wikipedia-w|Wikipedia
   - rebel|Rebel Alliance
 ---
 

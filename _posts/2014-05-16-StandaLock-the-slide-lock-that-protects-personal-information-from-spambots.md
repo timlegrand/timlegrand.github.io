@@ -1,8 +1,7 @@
 ---
 title: StandaLock
-subtitle: The sandalone slidelock that protects your personal information from spambots!
+subtitle: The slidelock that protects your personal information from spambots
 author: Tim
-authorsite: http://timlegrand.github.io
-layout: default
+layout: post
 link: https://github.com/timlegrand/StandaLock/
 ---
