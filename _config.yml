@@ -4,7 +4,7 @@ github: [Repository metadata]
 safe: true
 lsi: false
 source: .
-exclude: [Rakefile, Gemfile, Gemfile.lock, README.md, vendor]
+exclude: [Rakefile, Gemfile, Gemfile.lock, README.md, vendor, serve.sh, LICENSE]
 permalink: /:year-:month-:day/:title.html
 url: http://timlegrand.github.io
 description: Tim Legrand's personal website
