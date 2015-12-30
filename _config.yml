@@ -1,4 +1,4 @@
-highlighter: true
+highlighter: pygments
 markdown: rdiscount
 github: [Repository metadata]
 safe: true
