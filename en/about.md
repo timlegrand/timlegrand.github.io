@@ -35,7 +35,7 @@ I worked for High Performance Computing for 6 years. For 4 years, I built and ma
 
 Open Source. Wait, Nutella is what I like most. No, just kidding. Open Source. And Python. I ***love*** Python. Ok, Nutella first.
 
-My top three skills are Bash, Python, Git
+Today, my top three technologies are Bash, Python and Git.
 
 
 # I actively support
@@ -54,9 +54,3 @@ My top three skills are Bash, Python, Git
     {% endfor %}
   </ul>
 </div>
-
-<!--
-
-Au sein d'une équipe transverse de soutien aux projets, je suis amené à intégrer plusieurs équipes très différentes et simultanément (LTE/5G, compression vidéo, HDR, holographie, e-santé, réalité virtuelle, réalité augmentée...), pour lesquelles j'apporte mon conseil en parallélisation, industrialisation logicielle (gestion de version, test/intégration/déploiement continus) et méthodes agiles.
-
--->

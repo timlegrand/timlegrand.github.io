@@ -1,5 +1,4 @@
 ---
-title: Tim Legrand
 background: assets/images/the-loop.jpg
 layout: default
 waystoreachme:
@@ -14,7 +13,7 @@ waystoreachme:
   - skype|http://www.skype.com
 ---
 
-Feel free to contact me the way you want:
+Voici où vous pourrez me trouver:
 
 <ul class="list-inline text-center">
   {% for way in page.waystoreachme %}

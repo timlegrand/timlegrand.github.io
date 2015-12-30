@@ -29,10 +29,10 @@ forceallposts: false
   <a class="post-meta" target="{{ target }}" href="{{ posturl }}">&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i>&nbsp;Read more</a><br/>
     {% endif %}
     {% if post.link != nil and post.link != blank %}
-  <a class="post-meta" target="{{ target }}" href="{{ post.link }}">Check it out&nbsp;<i class="fa fa-sign-out"></i></a>
+  <a class="post-meta" target="{{ target }}" href="{{ post.link }}">Aller voir&nbsp;<i class="fa fa-sign-out"></i></a>
     {% endif %}
   
-  <p class="post-meta">Posted on {{ post.date | date: "%Y-%m-%d" }}</p>
+  <p class="post-meta">Posté le {{ post.date | date: "%Y-%m-%d" }}</p>
 </div>
 <hr>
   {% endunless <!-- Future post --> %}
