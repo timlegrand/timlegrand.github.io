@@ -1,5 +1,39 @@
+{% comment %}Get current selected locale according to the URL{% endcomment %}
+{% capture locale %}{{ page.url | truncate: 3, "" | remove: "/" }}{% endcapture %}
+
+{% unless site.authorized_locales contains locale %}
+{% assign locale = site.default_locale %}
+{% endunless %}
+
+{% if locale == "fr" %}
+    {% assign nextlocale = "en" %}
+    {% assign nextlocaletext = "English" %}
+    {% assign subtitle1 = site.subtitle1_fr %}
+    {% assign subtitle2 = site.subtitle2_fr %}
+    {% assign home = "Accueil" %}
+    {% assign about = "&Agrave; propos" %}
+    {% assign contact = "Contact" %}
+{% elsif locale == "en" %}
+    {% assign nextlocale = "fr" %}
+    {% assign nextlocaletext = "Français" %}
+    {% assign subtitle1 = site.subtitle1_en %}
+    {% assign subtitle2 = site.subtitle2_en %}
+    {% assign home = "Home" %}
+    {% assign about = "About" %}
+    {% assign contact = "Contact" %}
+{% else %}
+    {% comment %}Error!{% endcomment %}
+    {% assign nextlocale = "fr" %}
+    {% assign nextlocaletext = "French" %}
+    {% assign subtitle1 = site.subtitle1_en %}
+    {% assign subtitle2 = site.subtitle2_en %}
+    {% assign home = "Home" %}
+    {% assign about = "About" %}
+    {% assign contact = "Contact" %}
+{% endif %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ locale }}">
 <head>
     <meta charset="utf-8" /> 
     <title>{{ site.name }}</title>
@@ -59,14 +93,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ site.url }}/{{ locale }}/index.html">{{ home }}</a></li>
+                    <li><a href="{{ site.url }}/{{ locale }}/about.html">{{ about }}</a></li>
+                    <li><a href="{{ site.url }}/{{ locale }}/contact.html">{{ contact }}</a></li>
                     <li>
-                        <a href="{{ site.url }}/index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="{{ site.url }}/about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="{{ site.url }}/contact.html">Contact</a>
+                        <a href="{{ page.url | replace_first: locale, nextlocale }}">{{ nextlocaletext }}</a>
                     </li>
                 </ul>
             </div>
@@ -82,9 +113,9 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>timlegrand</h1>
-                    <hr class="small">
-                    <span class="subheading">High Performance Computing speaker<br/>Open Source &amp; Python enthusiast</span>
+                    <h1>{{ site.title }}</h1>
+                    <hr class="small">  
+                    <span class="subheading">{{ subtitle1 }}<br/>{{ subtitle2 }}</span>
                 </div>
             </div>
         </div>
