@@ -1,4 +1,5 @@
 ---
+title: Contact
 background: assets/images/the-loop.jpg
 layout: default
 waystoreachme:

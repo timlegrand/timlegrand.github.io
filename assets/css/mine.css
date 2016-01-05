@@ -11,3 +11,7 @@ img {
 .container {
   text-align: justify;
 }
+
+hr {
+	margin-top: 80px;
+}
