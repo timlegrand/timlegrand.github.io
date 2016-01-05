@@ -7,9 +7,11 @@ redirect_from:
   - "/index.html"
   - "/"
 ---
+{% comment %}Get current selected locale according to the URL{% endcomment %}
+{% capture locale %}{{ page.url | truncate: 3, "" | remove: "/" }}{% endcapture %}
 {% capture currenttime %}{{'now' | date: '%s'}}{% endcapture %}
 
-{% for post in site.posts limit: 10 %}
+{% for post in site.categories.en limit: 10 %}
   {% assign content = post.content | strip_newlines %}
   {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
   {% unless posttime > currenttime and page.forceallposts == false %}
@@ -26,7 +28,12 @@ redirect_from:
 <div class="post-preview">
   <a target="{{ target }}" href="{{ posturl }}">
     <h2 class="post-title">{{ post.title }}</h2>
-    <h3 class="post-subtitle">{{ post.subtitle }}</h3></a>
+    {% if locale == "fr" %}
+      {% assign sub = post.subtitle_fr %}
+    {% else %}
+      {% assign sub = post.subtitle %}
+    {% endif %}
+    <h3 class="post-subtitle">{{ sub }}</h3></a>
     {% if content != "" %}
       {{ post.excerpt }}
   <a class="post-meta" target="{{ target }}" href="{{ posturl }}">&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i>&nbsp;Read more</a><br/>
