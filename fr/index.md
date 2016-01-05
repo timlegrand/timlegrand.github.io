@@ -3,15 +3,23 @@ title: timlegrand
 background: assets/images/smoke-on.jpg
 layout: noparagraph
 forceallposts: false
-
-
-
 ---
 {% comment %}Get current selected locale according to the URL{% endcomment %}
 {% capture locale %}{{ page.url | truncate: 3, "" | remove: "/" }}{% endcapture %}
+{% unless site.authorized_locales contains locale %}{% assign locale = site.default_locale %}{% endunless %}
 {% capture currenttime %}{{'now' | date: '%s'}}{% endcapture %}
 
-{% for post in site.categories.fr limit: 10 %}
+{% if locale == "en" %}
+  {% assign read_more = "Read more" %}
+  {% assign check_it_out = "Check it out" %}
+  {% assign posted_on = "Posted on" %}
+{% else %}
+  {% assign read_more = "Lire la suite" %}
+  {% assign check_it_out = "Aller voir" %}
+  {% assign posted_on = "Posté le" %}
+{% endif %}
+
+{% for post in site.categories[locale] limit: 10 %}
   {% assign content = post.content | strip_newlines %}
   {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
   {% unless posttime > currenttime and page.forceallposts == false %}
@@ -19,7 +27,6 @@ forceallposts: false
       {% if content == "" %}
         {% if post.link != nil and post.link != blank %}
           {{ post.link }}
-          {% assign target = "_blank" %}
         {% endif %}
       {% else %}
         {{ post.url }}
@@ -36,13 +43,14 @@ forceallposts: false
     <h3 class="post-subtitle">{{ sub }}</h3></a>
     {% if content != "" %}
       {{ post.excerpt }}
-  <a class="post-meta" target="{{ target }}" href="{{ posturl }}">&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i>&nbsp;Lire la suite</a><br/>
+  <a class="post-meta" target="{{ target }}" href="{{ posturl }}">&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i>&nbsp;{{ read_more }}</a><br/>
     {% endif %}
     {% if post.link != nil and post.link != blank %}
-  <a class="post-meta" target="{{ target }}" href="{{ post.link }}">Aller voir&nbsp;<i class="fa fa-sign-out"></i></a>
+      {% assign target = "_blank" %}
+  <a class="post-meta" target="{{ target }}" href="{{ post.link }}">{{ check_it_out }}&nbsp;<i class="fa fa-sign-out"></i></a>
     {% endif %}
   
-  <p class="post-meta">Posté le {{ post.date | date: "%Y-%m-%d" }}</p>
+  <p class="post-meta">{{ posted_on }} {{ post.date | date: "%Y-%m-%d" }}</p>
 </div>
 <hr>
   {% endunless <!-- Future post --> %}
