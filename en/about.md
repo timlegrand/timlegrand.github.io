@@ -1,4 +1,5 @@
 ---
+title: About me
 background: assets/images/the-curve.jpg
 layout: default
 whatisupport:
