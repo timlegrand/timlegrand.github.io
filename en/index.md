@@ -1,5 +1,5 @@
 ---
-title: Tim Legrand
+title: timlegrand
 background: assets/images/smoke-on.jpg
 layout: noparagraph
 forceallposts: false
