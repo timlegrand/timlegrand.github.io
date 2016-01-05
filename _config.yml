@@ -12,12 +12,6 @@ description: Tim Legrand's personal website
 default_locale: "en"
 authorized_locales: ["en", "fr"]
 
-gems:
-  - jekyll-redirect-from
-
-whitelist:
-  - jekyll-redirect-from
-
 title: timlegrand
 subtitle1_en: High Performance Computing speaker
 subtitle2_en: Open Source &amp; Python enthusiast
