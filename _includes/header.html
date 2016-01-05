@@ -1,9 +1,20 @@
 {% comment %}Get current selected locale according to the URL{% endcomment %}
 {% capture locale %}{{ page.url | truncate: 3, "" | remove: "/" }}{% endcapture %}
 
-{% unless site.authorized_locales contains locale %}
-{% assign locale = site.default_locale %}
-{% endunless %}
+{% if site.authorized_locales contains locale %}
+    {% capture page_url %}{{ page.url }}{% endcapture %}
+{% else %}
+    {% if page.url contains "-en.html"  %}
+        {% assign locale = "en" %}
+        {% assign page_url = page.url %}
+    {% elsif page.url contains "-fr.html"  %}
+        {% assign locale = "fr" %}
+        {% assign page_url = page.url %}
+    {% else %}
+        {% assign locale = site.default_locale %}
+        {% capture page_url %}/{{ locale }}{{ page.url }}{% endcapture %}
+    {% endif %}
+{% endif %}
 
 {% if locale == "fr" %}
     {% assign nextlocale = "en" %}
@@ -30,6 +41,19 @@
     {% assign home = "Home" %}
     {% assign about = "About" %}
     {% assign contact = "Contact" %}
+{% endif %}
+
+
+{% capture typical_post_url_end %}-{{ locale }}.html{% endcapture %}
+{% capture post_url_end_next_locale %}-{{ nextlocale }}.html{% endcapture %}
+{% if page_url contains typical_post_url_end %}
+    {% capture page_url_next_locale %}
+        {{ page_url | replace: typical_post_url_end, post_url_end_next_locale }}
+    {% endcapture %}
+{% else %}
+    {% capture page_url_next_locale %}
+        {{ page_url | replace_first: locale, nextlocale }}
+    {% endcapture %}
 {% endif %}
 
 <!DOCTYPE html>
@@ -97,7 +121,7 @@
                     <li><a href="{{ site.url }}/{{ locale }}/about.html">{{ about }}</a></li>
                     <li><a href="{{ site.url }}/{{ locale }}/contact.html">{{ contact }}</a></li>
                     <li>
-                        <a href="{{ page.url | replace_first: locale, nextlocale }}">{{ nextlocaletext }}</a>
+                        <a href="{{ page_url_next_locale }}">{{ nextlocaletext }}</a>
                     </li>
                 </ul>
             </div>

@@ -49,7 +49,7 @@ forceallposts: false
       {% assign target = "_blank" %}
   <a class="post-meta" target="{{ target }}" href="{{ post.link }}">{{ check_it_out }}&nbsp;<i class="fa fa-sign-out"></i></a>
     {% endif %}
-  
+
   <p class="post-meta">{{ posted_on }} {{ post.date | date: "%Y-%m-%d" }}</p>
 </div>
 <hr>
